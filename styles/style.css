@@ -1,0 +1,11 @@
+.bodyBG {
+    background-image: url(../assets/pokemonnormalbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.taskBG {
+    background-image: url(../assets/pokemonflyingbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+  <body class="bodyBG">
+    
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col text-center" style="color: black; font-size: 30px; background-color: #cea3ff; border-radius: 15px;">
+                My Tasks
+            </div>
+            <div class="col text-center">
+                <button type="button" class="btn btn-primary" style="background-color: #cea3ff;" data-bs-toggle="modal" data-bs-target="#addModal">
+                    Add Task
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row" style="background-color: black; color: white; font-size: 35px;">
+            <div class="col">
+                <span id="taskToDo" class="me-5">0</span>
+                TO-DO
+            </div>
+            <div class="col">
+                <span id="taskInProgress" class="me-5">0</span>
+                IN PROGRESS
+            </div>
+            <div class="col">
+                <span id="taskCompleted" class="me-5">0</span>
+                COMPLETED
+            </div>
+        </div>
+        <div class="row taskBG" style=" height: 100vh;">
+            <div class="col" id="injectToDo">
+
+
+
+            </div>
+
+            <div class="col" id="injectInProgress">
+
+
+                
+            </div>
+
+            <div class="col" id="injectCompleted">
+
+
+
+            </div>
+        </div>
+    </div>
+  
+
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Task Info</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                  
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                    <input id="inputTaskName" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+                    <input id="inputTaskDescription" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
+                    <input id="inputTaskDate" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <select id="inputTaskPriority" class="form-select mb-2" aria-label="Default select example">
+                    <option selected>High Priority</option>
+                    <option value="Medium Priority">Medium Priority</option>
+                    <option value="Low Priority">Low Priority</option>
+                  </select>
+                  <select id="inputTaskStatus" class="form-select mb-2" aria-label="Default select example">
+                    <option selected>TO DO</option>
+                    <option value="IN PROGRESS">IN PROGRESS</option>
+                    <option value="COMPLETED">COMPLETED</option>
+                  </select>
+                  
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="taskSaveBtnAdd" class="btn btn-success" data-bs-dismiss="modal">Save</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Task Info</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                  
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                    <input id="inputTaskName1" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+                    <input id="inputTaskDescription1" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
+                    <input id="inputTaskDate1" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <select id="inputTaskPriority1" class="form-select mb-2" aria-label="Default select example">
+                    <option selected>High Priority</option>
+                    <option value="Medium Priority">Medium Priority</option>
+                    <option value="Low Priority">Low Priority</option>
+                  </select>
+                  <select id="inputTaskStatus1" class="form-select mb-2" aria-label="Default select example">
+                    <option selected>TO DO</option>
+                    <option value="IN PROGRESS">IN PROGRESS</option>
+                    <option value="COMPLETED">COMPLETED</option>
+                  </select>
+                  
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="taskSaveBtn" class="btn btn-success" data-bs-dismiss="modal">Save</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script type="module" src="./scripts/app.js"></script>
+  </body>
+</html>
